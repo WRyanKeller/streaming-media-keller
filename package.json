@@ -1,0 +1,18 @@
+{
+  "name": "streaming-media-keller",
+  "version": "1.0.0",
+  "description": "streaming media assignment for igme 430",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "pretest": "eslint ./src --fix",
+    "test": "echo \"Tests Complete\""
+  },
+  "author": "Ryan Keller",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.28.1"
+  }
+}
