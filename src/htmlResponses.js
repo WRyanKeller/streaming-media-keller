@@ -5,25 +5,25 @@ const client2 = fs.readFileSync(`${__dirname}/../client/client2.html`);
 const client3 = fs.readFileSync(`${__dirname}/../client/client3.html`);
 
 const getPage = (request, response, file) => {
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.write(file);
-    response.end();
-}
+  response.writeHead(200, { 'Content-Type': 'text/html' });
+  response.write(file);
+  response.end();
+};
 
 const getIndex = (request, response) => {
-    getPage(request, response, index);
+  getPage(request, response, index);
 };
 
 const getClient2 = (request, response) => {
-    getPage(request, response, client2);
+  getPage(request, response, client2);
 };
 
 const getClient3 = (request, response) => {
-    getPage(request, response, client3);
+  getPage(request, response, client3);
 };
 
 module.exports = {
-    'getIndex': getIndex,
-    'getClient2': getClient2,
-    'getClient3': getClient3
+  getIndex,
+  getClient2,
+  getClient3,
 };
