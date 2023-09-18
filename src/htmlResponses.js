@@ -1,11 +1,29 @@
 const fs = require('fs');
 
 const index = fs.readFileSync(`${__dirname}/../client/client.html`);
+const client2 = fs.readFileSync(`${__dirname}/../client/client2.html`);
+const client3 = fs.readFileSync(`${__dirname}/../client/client3.html`);
+
+const getPage = (request, response, file) => {
+    response.writeHead(200, { 'Content-Type': 'text/html' });
+    response.write(file);
+    response.end();
+}
 
 const getIndex = (request, response) => {
-    response.writeHead(200, { 'Content-Type': 'text/html' });
-    response.write(index);
-    response.end();
+    getPage(request, response, index);
 };
 
-module.exports.getIndex = getIndex;
+const getClient2 = (request, response) => {
+    getPage(request, response, client2);
+};
+
+const getClient3 = (request, response) => {
+    getPage(request, response, client3);
+};
+
+module.exports = {
+    'getIndex': getIndex,
+    'getClient2': getClient2,
+    'getClient3': getClient3
+};
